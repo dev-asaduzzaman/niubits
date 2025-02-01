@@ -16,16 +16,16 @@
   </head>
   <body>
     <!-- Header start here -->
-    <header>
+    <header id="myHeader">
         <nav class="navbar">
             <div class="nav-container">
               <div class="logo"><img src="Image/vertical@300x.png" alt=""></div>
               <button class="mobile-menu-btn">☰</button>
               <div class="nav-links">
-                <a href="#features">Who we are</a>
-                <a href="#how-it-works">Our statements</a>
-                <a href="#contact">Services</a>
-                <button class="btn btn-primary">Contact</button>
+                <a href="#who">Who we are</a>
+                <a href="#statements">Our statements</a>
+                <a href="#service">Services</a>
+                <button  class="btn btn-primary"><a href="#contact" style="color: #fff;">Contact</a></button>
               </div>
             </div>
           </nav>
@@ -51,7 +51,7 @@
     </section>
 
     <!-- who we are section start here -->
-     <section class="who">
+     <section class="who" id="who">
         <div class="who-container">
             <h1 class="who-heading">Who we are</h1>
             <p class="who-text">Niubits Technologies S.L. is a technology company focused in offer to our customers a way to improve the business applying the new technologies in a correct way.
@@ -62,7 +62,7 @@
     <!-- who we are section end here -->
 
 <!-- banner section start here -->
-    <section id="features" class="features">
+    <section id="statements" class="features">
       <div class="features-container">
         <div class="features-header">
           <h2>Our statements</h2>
@@ -106,10 +106,10 @@
       </div>
     </section>
 
-    <section id="features" class="features">
+    <section id="service" class="features">
         <div class="features-container">
           <div class="features-header">
-            <h2>Our statements</h2>
+            <h2>Our services</h2>
   
           </div>
           <div class="features-grid">
@@ -183,7 +183,7 @@
           </div>
         </div>
       </section>
-  <section class="conact-form">
+  <section class="conact-form" id="contact">
     <div class="contact_us_2">
         <div class="responsive-container-block big-container">
           <div class="blueBG">
@@ -336,56 +336,6 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-      // Simple mobile menu toggle
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navLinks = document.querySelector('.nav-links');
-      
-      mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-        // Initialize EmailJS
-  emailjs.init("zs308np3HqeWlikkp"); // Replace with your EmailJS User ID
-
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent the form from reloading the page
-
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const phoneNumber = document.getElementById("phoneNumber").value;
-  const query = document.getElementById("query").value;
-
-  // Prepare the email parameters
-  const templateParams = {
-    firstName: firstName,
-    lastName: lastName,
-    email: email,
-    phoneNumber: phoneNumber,
-    query: query
-  };
-
-  // Send the email via EmailJS
-  emailjs.send("service_v2ogi2q", "template_nuhapsh", templateParams)
-    .then(function(response) {
-      alert("Message sent successfully!");
-      document.getElementById("contactForm").reset(); // Reset the form
-    }, function(error) {
-      alert("Failed to send message. Please try again.");
-    });
-});
-var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
